@@ -1,4 +1,5 @@
 from flask import Flask
+from middlewares.autenticacion_middleware import require_login_middleware
 from config import Config
 from db import db
 
@@ -13,6 +14,9 @@ db.init_app(app)
 # Crea las todas las Tablas si no existen
 with app.app_context():
     db.create_all()
+
+# Configurar middleware de autenticación
+require_login_middleware(app)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug=True)
