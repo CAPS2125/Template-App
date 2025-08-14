@@ -3,16 +3,16 @@ from db.table import Usuario, db
 class Servicio_Usuario:
     # Método Registro
     @staticmethod
-    def registro(nombre, contrasena, telefono, email, sexo):
+    def registro(Datos):
         # Comprueba si ya existe un usuario con el nombre de usuario indicado en la base de datos
-        existe_usuario = Usuario.query.filter_by(nombre=nombre).first()
+        existe_usuario = Usuario.query.filter_by(nombre=Datos["Nombre"]).first()
         if existe_usuario:
             # Si el usuario existe, devuelve None indicando un error de registro
             return None
         # Crea y configura un nuevo objeto Usuario con el nombre de usuario proporcionado
-        nuevo_usuario = Usuario(nombre=nombre, telefono=telefono, email=email, sexo=sexo)
+        nuevo_usuario = Usuario(nombre=Datos["Nombre"], telefono=Datos["Telefono"], email=Datos["Email"], sexo=Datos["Sexo"])
         # Crea un hash de la contraseña y la almacena de forma segura en el objeto de usuario
-        nuevo_usuario.set_password(contrasena)
+        nuevo_usuario.set_password(Datos["Contrasena"])
         # Agregue el nuevo objeto de usuario a la sesión de base de datos para guardarlo
         db.session.add(nuevo_usuario)
         # Confirmar la transacción para guardar el nuevo usuario en la base de datos
