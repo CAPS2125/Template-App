@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Cita - Salón de Belleza Elegante</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">Coco Salon</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#galeria">Galería</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="citas-main">
+        <div class="container">
+            <div class="citas-header">
+                <h1>Agendar tu Cita</h1>
+                <p>Selecciona el servicio, fecha y hora que mejor te convenga</p>
+            </div>
+
+            <div class="citas-content">
+                <!-- Formulario de Cita -->
+                <div class="cita-form-container">
+                    <div class="cita-card">
+                        <h3>Información de la Cita</h3>
+                        <form class="cita-form" id="citaForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="servicio">Servicio</label>
+                                    <select id="servicio" name="servicio" required>
+                                        <option value="">Selecciona un servicio</option>
+                                        <option value="corte">Corte de Cabello</option>
+                                        <option value="peinado">Peinado</option>
+                                        <option value="unas">Uñas (Manicure/Pedicure)</option>
+                                        <option value="coloracion">Coloración</option>
+                                        <option value="tratamiento">Tratamiento Capilar</option>
+                                        <option value="maquillaje">Maquillaje</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="especialista">Especialista Preferido</label>
+                                    <select id="especialista" name="especialista">
+                                        <option value="">Cualquier especialista</option>
+                                        <option value="maria">María González</option>
+                                        <option value="ana">Ana Rodríguez</option>
+                                        <option value="carlos">Carlos Martínez</option>
+                                        <option value="lucia">Lucía Fernández</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fecha">Fecha</label>
+                                    <input type="date" id="fecha" name="fecha" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="hora">Hora</label>
+                                    <select id="hora" name="hora" required>
+                                        <option value="">Selecciona una hora</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                        <option value="18:00">6:00 PM</option>
+                                        <option value="19:00">7:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="duracion">Duración Estimada</label>
+                                <select id="duracion" name="duracion" required>
+                                    <option value="">Selecciona la duración</option>
+                                    <option value="30">30 minutos</option>
+                                    <option value="60">1 hora</option>
+                                    <option value="90">1 hora 30 minutos</option>
+                                    <option value="120">2 horas</option>
+                                    <option value="180">3 horas</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="notas">Notas Especiales</label>
+                                <textarea id="notas" name="notas" rows="4" placeholder="Describe cualquier preferencia especial, alergias o detalles importantes..."></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="confirmacion" name="confirmacion" required>
+                                <label for="confirmacion">Confirmo que he leído y acepto la política de cancelación</label>
+                            </div>
+
+                            <button type="submit" class="cita-button">Agendar Cita</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Calendario y Horarios -->
+                <div class="cita-info-container">
+                    <div class="cita-card">
+                        <h3>Horarios Disponibles</h3>
+                        <div class="horarios-info">
+                            <div class="horario-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Lunes - Sábado</h4>
+                                    <p>9:00 AM - 8:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="horario-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Domingo</h4>
+                                    <p>10:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cita-card">
+                        <h3>Política de Cancelación</h3>
+                        <div class="politica-info">
+                            <p>• Cancelaciones con 24 horas de anticipación: Sin cargo</p>
+                            <p>• Cancelaciones con menos de 24 horas: 50% del valor del servicio</p>
+                            <p>• No presentarse: 100% del valor del servicio</p>
+                        </div>
+                    </div>
+
+                    <div class="cita-card">
+                        <h3>Servicios Populares</h3>
+                        <div class="servicios-populares">
+                            <div class="servicio-popular">
+                                <i class="fas fa-cut"></i>
+                                <span>Corte + Lavado</span>
+                            </div>
+                            <div class="servicio-popular">
+                                <i class="fas fa-magic"></i>
+                                <span>Peinado de Fiesta</span>
+                            </div>
+                            <div class="servicio-popular">
+                                <i class="fas fa-hand-sparkles"></i>
+                                <span>Manicure + Pedicure</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Belleza Elegante</h3>
+                    <p>Transformando tu belleza desde 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <p>Lun - Sáb: 9:00 AM - 8:00 PM</p>
+                    <p>Domingo: 10:00 AM - 6:00 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Belleza Elegante. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
